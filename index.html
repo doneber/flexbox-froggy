@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex box</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    textarea {
+      font-family: monospace;
+      font-size: 1.5em;
+      height: 100%;
+    }
+
+    .container {
+      color: whitesmoke;
+      font-size: 2em;
+      background-color: #34495e;
+      width: 400px;
+      height: 400px;
+      display: flex;
+    }
+
+    .box {
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-red {
+      background: #e74c3c;
+    }
+
+    .box-green {
+      background: #27ae60;
+    }
+
+    .box-yellow {
+      background: #f1c40f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container classFromJs">
+    <div class="box box-red">1</div>
+    <div class="box box-green">2</div>
+    <div class="box box-green">3</div>
+    <div class="box box-green">4</div>
+    <div class="box box-green">5</div>
+    <div class="box box-yellow">6</div>
+    <div class="box box-yellow">7</div>
+  </div>
+  <div class="code">
+    <h3>Flexbox css code:</h3>
+    <textarea id="cssCodeInput" onkeyup="insertStyles()" cols="40" rows="6">
+    </textarea>
+  </div>
+  </div>
+  <script>
+    const cssState = document.querySelector('style').innerText
+    document.querySelector('#cssCodeInput').value="flex-wrap: wrap;"
+    insertStyles()
+    function insertStyles() {
+      const cssCode = document.querySelector('#cssCodeInput').value
+      document.querySelector('style').innerText = cssState + `.classFromJs{${cssCode}}`
+    }
+  </script>
+</body>
+
+</html>
